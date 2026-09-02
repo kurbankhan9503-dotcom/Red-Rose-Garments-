@@ -301,7 +301,7 @@
     .card-img-holder {
       position: relative;
       width: 100%;
-      padding-top: 112%;
+      padding-top: 125%; /* Thoda lamba frame banaya taaki poori dress dikhe */
       background: #f1f5f9;
       overflow: hidden;
     }
@@ -312,8 +312,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: top center; /* Isse model ka sar kabhi nahi katega */
+      cursor: pointer;
     }
-
     .product-badge {
       position: absolute;
       top: 12px;
@@ -755,5 +756,10 @@
       </div>
     </div>
   </footer>
+    <!-- Photo Fullscreen Popup Modal -->
+  <div id="photoModal" onclick="closePhotoModal()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; padding:15px;">
+    <span style="position:absolute; top:18px; right:24px; color:#fff; font-size:32px; font-weight:bold; cursor:pointer;">✕</span>
+    <img id="modalImg" src="" style="max-width:95%; max-height:85vh; border-radius:12px; object-fit:contain;" />
+  </div>
 </body>
 </html>
