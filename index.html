@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Red Rose Garments - Online Fashion Store</title>
+  <title>Red Rose Garments - Online Store & Video Shopping</title>
   
-  <!-- Modern Google Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,17 +19,17 @@
       --primary-dark: #128C7E;
       --accent: #e11d48;
       --accent-soft: #fff1f2;
-      --accent-hover: #be123c;
+      --video-btn: #8b5cf6;
+      --video-btn-hover: #7c3aed;
       --dark: #0f172a;
-      --dark-light: #1e293b;
       --slate: #64748b;
       --light-bg: #f8fafc;
       --card-bg: #ffffff;
       --border: #e2e8f0;
       --radius: 16px;
-      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.03);
+      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.04);
       --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.08);
-      --shadow-lg: 0 24px 48px rgba(15, 23, 42, 0.12);
+      --shadow-lg: 0 24px 48px rgba(15, 23, 42, 0.14);
     }
 
     * {
@@ -52,9 +52,8 @@
       color: #f8fafc;
       font-size: 0.8rem;
       text-align: center;
-      padding: 8px 16px;
+      padding: 9px 16px;
       font-weight: 500;
-      letter-spacing: 0.3px;
     }
     .top-bar span {
       color: #fb7185;
@@ -87,7 +86,7 @@
       gap: 10px;
       text-decoration: none;
       color: var(--dark);
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
@@ -101,7 +100,6 @@
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
     }
     .brand-logo span {
       color: var(--accent);
@@ -109,7 +107,7 @@
 
     .search-box {
       flex: 1;
-      max-width: 440px;
+      max-width: 420px;
       position: relative;
     }
     .search-box input {
@@ -120,12 +118,10 @@
       background: #f1f5f9;
       font-size: 0.88rem;
       outline: none;
-      transition: all 0.2s ease;
     }
     .search-box input:focus {
       background: #fff;
       border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.1);
     }
     .search-box i {
       position: absolute;
@@ -137,7 +133,6 @@
     }
 
     .cart-btn {
-      position: relative;
       background: #f1f5f9;
       border: none;
       padding: 9px 16px;
@@ -149,11 +144,6 @@
       align-items: center;
       gap: 8px;
       color: var(--dark);
-      transition: all 0.2s ease;
-    }
-    .cart-btn:hover {
-      background: var(--dark);
-      color: #fff;
     }
     .cart-badge {
       background: var(--accent);
@@ -164,70 +154,92 @@
       padding: 2px 7px;
     }
 
-    /* Hero Banner */
-    .hero {
-      background: radial-gradient(circle at 20% 20%, #1e293b 0%, #0f172a 100%);
-      color: #ffffff;
-      padding: 45px 18px;
-      border-radius: 0 0 24px 24px;
-    }
-    .hero-content {
+    /* Main Store Banner */
+    .banner-wrapper {
       max-width: 1240px;
-      margin: auto;
+      margin: 18px auto 14px;
+      padding: 0 16px;
     }
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(225, 29, 72, 0.18);
-      border: 1px solid rgba(225, 29, 72, 0.35);
-      color: #fda4af;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
+    .banner-card {
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #000;
     }
-    .hero h1 {
-      font-size: 2.2rem;
-      line-height: 1.2;
-      font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: -0.8px;
+    .banner-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
-    .hero p {
-      color: #94a3b8;
-      font-size: 0.96rem;
-      line-height: 1.5;
-      max-width: 500px;
-      margin-bottom: 20px;
+
+    /* Video Call CTA Strip */
+    .video-strip {
+      max-width: 1240px;
+      margin: 0 auto 24px;
+      padding: 0 16px;
     }
-    .trust-badges {
+    .video-strip-content {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: #fff;
+      border-radius: 14px;
+      padding: 14px 20px;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
       gap: 14px;
-      font-size: 0.82rem;
-      color: #cbd5e1;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
     }
-    .trust-badges div {
+    .video-info {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 14px;
     }
-    .trust-badges i {
-      color: var(--primary);
+    .video-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    .video-text h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+    .video-text p {
+      font-size: 0.8rem;
+      color: #e0e7ff;
+    }
+    .btn-video-call {
+      background: #ffffff;
+      color: #6d28d9;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s;
+    }
+    .btn-video-call:hover {
+      transform: scale(1.04);
     }
 
-    /* Main Container */
+    /* Main Container & Filters */
     .main-container {
       max-width: 1240px;
-      margin: 28px auto 70px;
-      padding: 0 18px;
+      margin: auto;
+      padding: 0 18px 70px;
     }
 
-    /* Category Filter Pills */
     .filter-section {
       display: flex;
       justify-content: space-between;
@@ -255,29 +267,13 @@
       font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .cat-pill:hover {
-      border-color: var(--dark);
-      color: var(--dark);
+      transition: all 0.2s;
     }
     .cat-pill.active {
       background: var(--dark);
       color: #fff;
       border-color: var(--dark);
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-    }
-
-    .sort-box {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      padding: 8px 14px;
-      border-radius: 30px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--dark);
-      outline: none;
-      cursor: pointer;
     }
 
     /* Product Grid */
@@ -287,7 +283,6 @@
       gap: 22px;
     }
 
-    /* Product Card */
     .product-card {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -296,13 +291,11 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
+      transition: all 0.3s;
     }
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-md);
-      border-color: #cbd5e1;
     }
 
     .card-img-holder {
@@ -319,10 +312,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .product-card:hover .card-img-holder img {
-      transform: scale(1.05);
     }
 
     .product-badge {
@@ -334,7 +323,6 @@
       font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
       z-index: 2;
     }
     .product-badge.sale { background: #fee2e2; color: #dc2626; }
@@ -356,7 +344,7 @@
       margin-bottom: 4px;
     }
     .card-title {
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 700;
       color: var(--dark);
       margin-bottom: 6px;
@@ -395,213 +383,43 @@
       border-radius: 4px;
     }
 
-    /* Buttons */
     .card-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
-    .btn-add-cart {
-      background: #f1f5f9;
-      color: var(--dark);
-      border: none;
-      padding: 10px;
+    .btn-action-vc {
+      background: #f5f3ff;
+      color: #6d28d9;
+      border: 1px solid #ddd6fe;
+      padding: 9px;
       border-radius: 10px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .btn-add-cart:hover {
-      background: #e2e8f0;
-    }
-    .btn-buy-now {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
       text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-buy-now:hover {
-      background: var(--primary-dark);
-    }
-
-    /* Cart Drawer */
-    .cart-drawer-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(4px);
-      z-index: 2000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.25s ease;
-    }
-    .cart-drawer-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .cart-drawer {
-      position: fixed;
-      top: 0;
-      right: -420px;
-      width: 100%;
-      max-width: 400px;
-      height: 100%;
-      background: #ffffff;
-      z-index: 2001;
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      flex-direction: column;
-      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .cart-drawer.active {
-      right: 0;
-    }
-
-    .drawer-top {
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .drawer-top h2 {
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
-    .btn-close {
-      background: #f1f5f9;
-      border: none;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      color: var(--slate);
-    }
-
-    .drawer-body {
-      flex: 1;
-      overflow-y: auto;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .cart-item {
-      display: flex;
-      gap: 12px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 14px;
-    }
-    .cart-item img {
-      width: 60px;
-      height: 70px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .cart-item-details {
-      flex: 1;
-    }
-    .cart-item-title {
-      font-size: 0.88rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .cart-item-price {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 6px;
-    }
-    .qty-wrap {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 5px;
     }
-    .qty-btn {
-      width: 24px;
-      height: 24px;
-      border: 1px solid var(--border);
-      background: #fff;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 700;
-    }
-    .qty-num {
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .drawer-bottom {
-      padding: 18px;
-      border-top: 1px solid var(--border);
-      background: #f8fafc;
-    }
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      font-size: 0.88rem;
-      color: var(--slate);
-    }
-    .price-row.total {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--dark);
-      margin-top: 6px;
-      border-top: 1px dashed var(--border);
-      padding-top: 10px;
-    }
-
-    .field-input {
-      width: 100%;
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      margin-bottom: 10px;
-      font-size: 0.85rem;
-      outline: none;
-    }
-    .field-input:focus {
-      border-color: var(--accent);
-    }
-
-    .btn-checkout {
-      width: 100%;
+    .btn-action-buy {
       background: var(--primary);
       color: white;
       border: none;
-      padding: 13px;
+      padding: 9px;
       border-radius: 10px;
-      font-size: 0.95rem;
+      font-size: 0.78rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      transition: background 0.2s;
-    }
-    .btn-checkout:hover {
-      background: var(--primary-dark);
+      gap: 5px;
+      text-decoration: none;
     }
 
-    /* Floating WhatsApp Icon */
+    /* Floating WhatsApp Button */
     .float-wa-btn {
       position: fixed;
       bottom: 22px;
@@ -618,37 +436,48 @@
       box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
       text-decoration: none;
       z-index: 1000;
-      transition: transform 0.2s ease;
-    }
-    .float-wa-btn:hover {
-      transform: scale(1.08);
     }
 
-    /* Toast */
-    .toast-box {
+    /* Cart Drawer */
+    .cart-drawer-overlay {
       position: fixed;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: var(--dark);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 3000;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s;
+    }
+    .cart-drawer-overlay.active { opacity: 1; visibility: visible; }
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      background: #ffffff;
+      z-index: 2001;
       box-shadow: var(--shadow-lg);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .toast-box.show {
-      transform: translateX(-50%) translateY(0);
+    .cart-drawer.active { right: 0; }
+    .drawer-top {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+    .drawer-body { flex: 1; overflow-y: auto; padding: 18px; }
+    .drawer-bottom { padding: 18px; border-top: 1px solid var(--border); background: #f8fafc; }
+    .field-input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; }
+    .btn-checkout { width: 100%; background: var(--primary); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 700; cursor: pointer; }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 1.8rem; }
+      .video-strip-content { text-align: left; }
       .search-box { order: 3; width: 100%; max-width: 100%; }
       .nav-container { flex-wrap: wrap; }
       .card-actions { grid-template-columns: 1fr; }
@@ -657,9 +486,9 @@
 </head>
 <body>
 
-  <!-- Announcement Bar -->
+  <!-- 1. Top Announcement Bar (New 600+ Stock Notice) -->
   <div class="top-bar">
-    🌹 <span>RED ROSE GARMENTS:</span> Direct WhatsApp Order Booking | Fast Delivery
+    🎉 <span>NAYA STOCK AA GAYA:</span> 600+ Designer Sarees & Cotton Suits Live | Direct WhatsApp Order
   </div>
 
   <!-- Header -->
@@ -672,7 +501,7 @@
 
       <div class="search-box">
         <i class="fas fa-search"></i>
-        <input type="text" id="searchInput" placeholder="Search kurti, suit, kids wear, sarees..." oninput="handleSearch()" />
+        <input type="text" id="searchInput" placeholder="Search saree, kurti, cotton suit..." oninput="handleSearch()" />
       </div>
 
       <button class="cart-btn" onclick="toggleCart()">
@@ -683,34 +512,40 @@
     </div>
   </header>
 
-    <!-- Store Main Banner -->
-  <div style="max-width: 1240px; margin: 18px auto 25px; padding: 0 16px;">
-    <div style="width: 100%; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.25); background: #000;">
-      <img 
-        src="IMG-20260201-WA0011.jpg" 
-        alt="Red Rose Garments Banner" 
-        style="width: 100%; height: auto; display: block; object-fit: cover;" 
-      />
+  <!-- Store Main Banner -->
+  <div class="banner-wrapper">
+    <div class="banner-card">
+      <img src="IMG_20260816_112241.png" alt="Red Rose Garments Banner" />
     </div>
   </div>
 
-  <!-- Store Controls & Grid -->
+  <!-- 2. Video Call Shopping Strip -->
+  <div class="video-strip">
+    <div class="video-strip-content">
+      <div class="video-info">
+        <div class="video-icon-box"><i class="fas fa-video"></i></div>
+        <div class="video-text">
+          <h4>Dukan Se Live Video Call Par Kapda Pasand Karein!</h4>
+          <p>WhatsApp Video Call par poora stock aur alag-alag color options dekhein.</p>
+        </div>
+      </div>
+      <a href="https://wa.me/918766278943?text=Namaste!%20Mujhe%20dukan%20ka%20stock%20Video%20Call%20par%20dekhna%20hai." target="_blank" class="btn-video-call">
+        <i class="fab fa-whatsapp"></i> Book Video Call
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Container -->
   <main class="main-container">
     
+    <!-- 3. Real Stock Category Filters -->
     <div class="filter-section">
       <div class="category-scroll">
         <button class="cat-pill active" onclick="setCategory('all', this)">All Items</button>
+        <button class="cat-pill" onclick="setCategory('sarees', this)">Sarees (Silk & Box)</button>
+        <button class="cat-pill" onclick="setCategory('suits', this)">Ladies Suits (Cotton)</button>
         <button class="cat-pill" onclick="setCategory('kids', this)">Kids Wear</button>
-        <button class="cat-pill" onclick="setCategory('women', this)">Women's Ethnic</button>
-        <button class="cat-pill" onclick="setCategory('men', this)">Men's Wear</button>
-        <button class="cat-pill" onclick="setCategory('sarees', this)">Sarees & Kurtis</button>
       </div>
-
-      <select class="sort-box" id="sortSelect" onchange="handleSort()">
-        <option value="featured">Sort by: Featured</option>
-        <option value="low-high">Price: Low to High</option>
-        <option value="high-low">Price: High to Low</option>
-      </select>
     </div>
 
     <!-- Product Grid -->
@@ -721,47 +556,27 @@
   <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
   <div class="cart-drawer" id="cartDrawer">
     <div class="drawer-top">
-      <h2>Shopping Cart (<span id="drawerCount">0</span>)</h2>
-      <button class="btn-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+      <h3 style="font-size: 1.1rem;">Shopping Cart (<span id="drawerCount">0</span>)</h3>
+      <button onclick="toggleCart()" style="border:none; background:#f1f5f9; width:30px; height:30px; border-radius:50%; cursor:pointer;">✕</button>
     </div>
-
     <div class="drawer-body" id="drawerItems"></div>
-
     <div class="drawer-bottom" id="drawerFooter">
-      <div class="price-row">
-        <span>Subtotal:</span>
-        <span id="subtotalPrice">₹0</span>
-      </div>
-      <div class="price-row">
-        <span>Delivery:</span>
-        <span style="color:#16a34a; font-weight:700;">FREE</span>
-      </div>
-      <div class="price-row total">
-        <span>Total Payable:</span>
+      <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:800; font-size:1.1rem;">
+        <span>Total:</span>
         <span id="totalPrice">₹0</span>
       </div>
-
-      <input type="text" id="custName" class="field-input" placeholder="Aapka Naam (Customer Name)" />
-      <input type="text" id="custAddress" class="field-input" placeholder="Delivery Address / City / Pin" />
-
-      <button class="btn-checkout" onclick="checkoutWhatsApp()">
-        <i class="fab fa-whatsapp"></i> Confirm Order on WhatsApp
-      </button>
+      <input type="text" id="custName" class="field-input" placeholder="Aapka Naam" />
+      <input type="text" id="custAddress" class="field-input" placeholder="Delivery Address / City" />
+      <button class="btn-checkout" onclick="checkoutWhatsApp()"><i class="fab fa-whatsapp"></i> Confirm on WhatsApp</button>
     </div>
   </div>
 
-  <!-- Floating WhatsApp Action -->
-  <a href="https://wa.me/918766278943?text=Namaste! Mujhe Red Rose Garments ka collection dekhna hai." target="_blank" class="float-wa-btn">
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/918766278943?text=Namaste!%20Mujhe%20Red%20Rose%20Garments%20ka%20stock%20dekhna%20hai." target="_blank" class="float-wa-btn">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Toast Notification -->
-  <div class="toast-box" id="toast">
-    <i class="fas fa-circle-check" style="color: #22c55e;"></i>
-    <span id="toastMsg">Product added to cart!</span>
-  </div>
-
-  <!-- JavaScript App Logic -->
+  <!-- Script Logic -->
   <script>
     const STORE_CONFIG = {
       storeName: "Red Rose Garments",
@@ -774,45 +589,45 @@
         id: 101,
         title: "Girls Festive Yellow Kurti with Pant Set",
         category: "kids",
-        desc: "Leheriya wavy multicolor print with mirror work, tassels & straight pant (4-5 Years).",
+        desc: "Leheriya wavy multicolor print with mirror work & pant (4-5 Years).",
         price: 450,
         oldPrice: 650,
-        badge: "New Arrival",
+        badge: "Kids Special",
         badgeType: "trending",
         image: "IMG_20260902_000740.png"
       },
       {
         id: 102,
-        title: "Classic Oxford Pure Cotton Shirt",
-        category: "men",
-        desc: "Comfortable breathable cotton casual shirt for stylish daily wear.",
-        price: 499,
-        oldPrice: 899,
-        badge: "Best Seller",
+        title: "Suryajyoti Pure Cotton Ready Suit Set",
+        category: "suits",
+        desc: "Comfortable daily & party wear pure cotton unstitched/ready suit material with dupatta.",
+        price: 799,
+        oldPrice: 1150,
+        badge: "New Stock",
         badgeType: "popular",
-        image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80"
-      },
-      {
-        id: 103,
-        title: "Designer Embroidered Kurti Set",
-        category: "women",
-        desc: "Party-wear rayon kurti set with matched dupatta and floral embroidery.",
-        price: 749,
-        oldPrice: 1299,
-        badge: "42% OFF",
-        badgeType: "sale",
         image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80"
       },
       {
-        id: 104,
-        title: "Floral Printed Georgette Saree",
+        id: 103,
+        title: "Kanya Silk Designer Fancy Saree",
         category: "sarees",
-        desc: "Lightweight graceful saree with rich border and digital prints.",
-        price: 599,
-        oldPrice: 999,
-        badge: "Popular",
-        badgeType: "popular",
+        desc: "Rich festive border with elegant silk weaving & matched blouse piece.",
+        price: 1850,
+        oldPrice: 2499,
+        badge: "Silk Premium",
+        badgeType: "sale",
         image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 104,
+        title: "Kayaan Floral Box Saree Collection",
+        category: "sarees",
+        desc: "Lightweight soft georgette printed daily wear saree in premium box pack.",
+        price: 499,
+        oldPrice: 750,
+        badge: "Budget Choice",
+        badgeType: "popular",
+        image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80"
       }
     ];
 
@@ -831,23 +646,8 @@
         return matchesCategory && matchesSearch;
       });
 
-      const sortVal = document.getElementById("sortSelect").value;
-      if (sortVal === 'low-high') list.sort((a, b) => a.price - b.price);
-      if (sortVal === 'high-low') list.sort((a, b) => b.price - a.price);
-
-      if (list.length === 0) {
-        grid.innerHTML = `
-          <div style="grid-column: 1/-1; text-align: center; padding: 50px 20px; color: var(--slate);">
-            <i class="fas fa-box-open" style="font-size: 2.8rem; margin-bottom: 10px;"></i>
-            <h3>Koi item nahi mila</h3>
-            <p>Dusri category chunein ya search text badlein.</p>
-          </div>
-        `;
-        return;
-      }
-
       list.forEach(item => {
-        const discountPercent = Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100);
+        const discount = Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100);
         const card = document.createElement("div");
         card.className = "product-card";
         card.innerHTML = `
@@ -862,131 +662,20 @@
             <div class="price-wrap">
               <span class="price-now">${STORE_CONFIG.currency}${item.price}</span>
               <span class="price-mrp">${STORE_CONFIG.currency}${item.oldPrice}</span>
-              <span class="price-off">${discountPercent}% OFF</span>
+              <span class="price-off">${discount}% OFF</span>
             </div>
             <div class="card-actions">
-              <button class="btn-add-cart" onclick="addToCart(${item.id})">
-                <i class="fas fa-cart-plus"></i> Add to Cart
-              </button>
-              <button class="btn-buy-now" onclick="quickBuy(${item.id})">
+              <a href="https://wa.me/${STORE_CONFIG.whatsappNumber}?text=Namaste!%20Mujhe%20${encodeURIComponent(item.title)}%20video%20call%20par%20dekhna%20hai." target="_blank" class="btn-action-vc">
+                <i class="fas fa-video"></i> Video Dekhein
+              </a>
+              <a href="https://wa.me/${STORE_CONFIG.whatsappNumber}?text=Namaste!%20Mujhe%20${encodeURIComponent(item.title)}%20(₹${item.price})%20order%20karna%20hai." target="_blank" class="btn-action-buy">
                 <i class="fab fa-whatsapp"></i> Buy Now
-              </button>
+              </a>
             </div>
           </div>
         `;
         grid.appendChild(card);
       });
-    }
-
-    function addToCart(id) {
-      const existing = cart.find(x => x.id === id);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        const product = PRODUCTS.find(x => x.id === id);
-        cart.push({ ...product, qty: 1 });
-      }
-      updateCartUI();
-      showToast("Item cart me add ho gaya!");
-    }
-
-    function changeQty(id, change) {
-      const item = cart.find(x => x.id === id);
-      if (item) {
-        item.qty += change;
-        if (item.qty <= 0) {
-          cart = cart.filter(x => x.id !== id);
-        }
-      }
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
-      document.getElementById("cartCount").innerText = totalItems;
-      document.getElementById("drawerCount").innerText = totalItems;
-
-      const container = document.getElementById("drawerItems");
-      container.innerHTML = "";
-
-      let total = 0;
-
-      if (cart.length === 0) {
-        container.innerHTML = `
-          <div style="text-align:center; padding: 40px 10px; color: var(--slate);">
-            <i class="fas fa-shopping-basket" style="font-size: 2.5rem; margin-bottom: 10px;"></i>
-            <p>Aapka cart khali hai.</p>
-          </div>
-        `;
-        document.getElementById("drawerFooter").style.display = "none";
-      } else {
-        document.getElementById("drawerFooter").style.display = "block";
-        cart.forEach(item => {
-          total += item.price * item.qty;
-          const el = document.createElement("div");
-          el.className = "cart-item";
-          el.innerHTML = `
-            <img src="${item.image}" alt="${item.title}" />
-            <div class="cart-item-details">
-              <div class="cart-item-title">${item.title}</div>
-              <div class="cart-item-price">${STORE_CONFIG.currency}${item.price} × ${item.qty} = ${STORE_CONFIG.currency}${item.price * item.qty}</div>
-              <div class="qty-wrap">
-                <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
-                <span class="qty-num">${item.qty}</span>
-                <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
-              </div>
-            </div>
-          `;
-          container.appendChild(el);
-        });
-      }
-
-      document.getElementById("subtotalPrice").innerText = `${STORE_CONFIG.currency}${total}`;
-      document.getElementById("totalPrice").innerText = `${STORE_CONFIG.currency}${total}`;
-    }
-
-    function toggleCart() {
-      document.getElementById("cartOverlay").classList.toggle("active");
-      document.getElementById("cartDrawer").classList.toggle("active");
-    }
-
-    function checkoutWhatsApp() {
-      if (cart.length === 0) return;
-
-      const name = document.getElementById("custName").value.trim() || "Customer";
-      const address = document.getElementById("custAddress").value.trim() || "Shared on chat";
-
-      let orderText = `🛍️ *Naya Order Request - ${STORE_CONFIG.storeName}*\n`;
-      orderText += `--------------------------\n`;
-      orderText += `👤 *Customer:* ${name}\n`;
-      orderText += `📍 *Address:* ${address}\n\n`;
-      orderText += `📦 *Ordered Items:*\n`;
-
-      let grandTotal = 0;
-      cart.forEach((item, idx) => {
-        const itemTotal = item.price * item.qty;
-        grandTotal += itemTotal;
-        orderText += `${idx + 1}. ${item.title} (Qty: ${item.qty}) - ₹${itemTotal}\n`;
-      });
-
-      orderText += `\n💰 *Total Payable:* ₹${grandTotal}\n`;
-      orderText += `🚚 *Delivery:* FREE\n`;
-      orderText += `--------------------------\n`;
-      orderText += `Kripya mera order confirm karein aur payment details bhejein.`;
-
-      const encodedMsg = encodeURIComponent(orderText);
-      window.open(`https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodedMsg}`, '_blank');
-    }
-
-    function quickBuy(id) {
-      const item = PRODUCTS.find(x => x.id === id);
-      let orderText = `🛍️ *Direct Buy Request - ${STORE_CONFIG.storeName}*\n`;
-      orderText += `--------------------------\n`;
-      orderText += `*Item:* ${item.title}\n`;
-      orderText += `*Price:* ₹${item.price} (MRP: ₹${item.oldPrice})\n\n`;
-      orderText += `Mujhe yeh order karna hai. Kripya process batayein.`;
-
-      window.open(`https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(orderText)}`, '_blank');
     }
 
     function setCategory(cat, btn) {
@@ -1001,19 +690,12 @@
       renderCatalog();
     }
 
-    function handleSort() {
-      renderCatalog();
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById("toast");
-      document.getElementById("toastMsg").innerText = msg;
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 2200);
+    function toggleCart() {
+      document.getElementById("cartOverlay").classList.toggle("active");
+      document.getElementById("cartDrawer").classList.toggle("active");
     }
 
     renderCatalog();
-    updateCartUI();
   </script>
 </body>
 </html>
