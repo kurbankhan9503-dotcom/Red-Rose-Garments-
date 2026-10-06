@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Red Rose Garments - Online Store & Video Shopping</title>
   
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
@@ -15,6 +18,9 @@
       --primary: #25D366;
       --primary-dark: #128C7E;
       --accent: #e11d48;
+      --accent-soft: #fff1f2;
+      --video-btn: #8b5cf6;
+      --video-btn-hover: #7c3aed;
       --dark: #0f172a;
       --slate: #64748b;
       --light-bg: #f8fafc;
@@ -40,6 +46,7 @@
       overflow-x: hidden;
     }
 
+    /* Top Strip */
     .top-bar {
       background: linear-gradient(90deg, #0f172a, #1e293b);
       color: #f8fafc;
@@ -53,6 +60,7 @@
       font-weight: 700;
     }
 
+    /* Header */
     header {
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
@@ -146,6 +154,7 @@
       padding: 2px 7px;
     }
 
+    /* Main Store Banner */
     .banner-wrapper {
       max-width: 1240px;
       margin: 18px auto 14px;
@@ -165,6 +174,7 @@
       object-fit: cover;
     }
 
+    /* Video Call CTA Strip */
     .video-strip {
       max-width: 1240px;
       margin: 0 auto 24px;
@@ -217,8 +227,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      transition: transform 0.2s;
+    }
+    .btn-video-call:hover {
+      transform: scale(1.04);
     }
 
+    /* Main Container & Filters */
     .main-container {
       max-width: 1240px;
       margin: auto;
@@ -261,6 +276,7 @@
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
     }
 
+    /* Product Grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -405,6 +421,7 @@
       text-decoration: none;
     }
 
+    /* Floating WhatsApp Button */
     .float-wa-btn {
       position: fixed;
       bottom: 22px;
@@ -423,6 +440,7 @@
       z-index: 1000;
     }
 
+    /* Cart Drawer */
     .cart-drawer-overlay {
       position: fixed;
       inset: 0;
@@ -472,7 +490,7 @@
 
   <!-- Top Announcement Bar -->
   <div class="top-bar">
-    🎉 <span>NAYA STOCK AA GAYA:</span> 600+ Designer Sarees & Cotton Suits Live | Direct WhatsApp Order
+    🎉 <span>NAYA STOCK AA GAYA:</span> 150+ Kids Wear, Sarees & Cotton Suits Live | Direct WhatsApp Order
   </div>
 
   <!-- Header -->
@@ -518,7 +536,8 @@
       </a>
     </div>
   </div>
-    <!-- Main Container -->
+
+  <!-- Main Catalog -->
   <main class="main-container">
     <div class="filter-section">
       <div class="category-scroll">
@@ -529,7 +548,7 @@
       </div>
     </div>
 
-    <!-- Product Grid -->
+    <!-- Products Grid -->
     <div class="products-grid" id="productsGrid"></div>
   </main>
 
@@ -585,7 +604,7 @@
   <!-- Photo Fullscreen Popup Modal -->
   <div id="photoModal" onclick="closePhotoModal()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; padding:15px; cursor:pointer;">
     <span style="position:absolute; top:18px; right:24px; color:#fff; font-size:32px; font-weight:bold; cursor:pointer;">✕</span>
-    <img id="modalImg" src="" style="max-width:95%; max-height:85vh; border-radius:12px; object-fit:contain;" />
+    <img id="modalImg" src="" style="max-width:95%; max-height:85vh; border-radius:12px; object-fit:contain; box-shadow:0 10px 30px rgba(0,0,0,0.5);" />
   </div>
 
   <!-- Cart Drawer -->
@@ -666,49 +685,50 @@
         image: "IMG_20260903_002601.jpg"
       },
       {
-  id: 105,
-  title: "Girls Designer Net Barbie Party Frock",
-  category: "kids",
-  desc: "Fluffy net party gown, birthday aur festival special. Size 16 se 34 (Umar: 2 se 10 Saal).",
-  price: 1150,
-  oldPrice: 1599,
-  badge: "Barbie Special",
-  badgeType: "trending",
-  image: "IMG_20260902_000740.png" /* Yahan Tinny Barbie ki photo lagayein */
-},
-{
-  id: 106,
-  title: "Boys Festive 3-Piece Party Baba Suit Set",
-  category: "kids",
-  desc: "Stylish coat-pant & shirt look baba suit. Shaadi aur festival wear. (Umar: 2 se 10 Saal).",
-  price: 1199,
-  oldPrice: 1650,
-  badge: "Boys Partywear",
-  badgeType: "sale",
-  image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80"
-},
-{
-  id: 107,
-  title: "Toddler Soft Cotton Daily Baba Suit",
-  category: "kids",
-  desc: "Super soft breathable pure cotton baby suit set. (Umar: 6 Mahine se 2 Saal).",
-  price: 320,
-  oldPrice: 499,
-  badge: "Budget Pick",
-  badgeType: "popular",
-  image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80"
-}
- ];
+        id: 105,
+        title: "Girls Designer Net Barbie Party Frock",
+        category: "kids",
+        desc: "Fluffy net party gown, birthday aur festival special. Size 16 se 34 (Umar: 2 se 10 Saal).",
+        price: 1150,
+        oldPrice: 1599,
+        badge: "Barbie Special",
+        badgeType: "trending",
+        image: "IMG_20260902_000740.png"
+      },
+      {
+        id: 106,
+        title: "Boys Festive 3-Piece Party Baba Suit Set",
+        category: "kids",
+        desc: "Stylish coat-pant & shirt look baba suit. Shaadi aur festival wear. (Umar: 2 se 10 Saal).",
+        price: 1199,
+        oldPrice: 1650,
+        badge: "Boys Partywear",
+        badgeType: "sale",
+        image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: 107,
+        title: "Toddler Soft Cotton Daily Baba Suit",
+        category: "kids",
+        desc: "Super soft breathable pure cotton baby suit set. (Umar: 6 Mahine se 2 Saal).",
+        price: 320,
+        oldPrice: 499,
+        badge: "Budget Pick",
+        badgeType: "popular",
+        image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
 
     let currentCategory = 'all';
     let currentSearch = '';
 
     function renderCatalog() {
       const grid = document.getElementById("productsGrid");
+      if (!grid) return;
       grid.innerHTML = "";
 
       let list = PRODUCTS.filter(p => {
-        const matchesCategory = (currentCategory === 'all' || p.category === currentCategory);
+        const matchesCategory = (currentCategory === 'all' || p.category.toLowerCase() === currentCategory.toLowerCase());
         const matchesSearch = p.title.toLowerCase().includes(currentSearch.toLowerCase()) || 
                               p.desc.toLowerCase().includes(currentSearch.toLowerCase());
         return matchesCategory && matchesSearch;
@@ -765,12 +785,18 @@
 
     function openPhotoModal(imgSrc) {
       const modal = document.getElementById("photoModal");
-      document.getElementById("modalImg").src = imgSrc;
-      modal.style.display = "flex";
+      const modalImg = document.getElementById("modalImg");
+      if (modal && modalImg) {
+        modalImg.src = imgSrc;
+        modal.style.display = "flex";
+      }
     }
 
     function closePhotoModal() {
-      document.getElementById("photoModal").style.display = "none";
+      const modal = document.getElementById("photoModal");
+      if (modal) {
+        modal.style.display = "none";
+      }
     }
 
     function checkoutWhatsApp() {
@@ -784,6 +810,7 @@
       window.open(`https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${msg}`, "_blank");
     }
 
+    // Auto run on page load
     renderCatalog();
   </script>
 </body>
